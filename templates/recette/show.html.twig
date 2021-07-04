@@ -13,11 +13,6 @@
              style="width:100%; object-fit: contain; max-height:300px;">
 
 
-
-
-
-
-
         {% if (app.user and app.user == recette.author) or is_granted('ROLE_ADMIN') %}
             <div class="text-center mb-3">
                 <a href="{{ path('recette_edit',{'slug': recette.slug}) }}" class="btn btn-secondary">Modification de la
@@ -71,16 +66,13 @@
     <div class="col">
         {% set a = recette.author %}
         {# exemple : ad.author.fullName devient a.fullName #}
-
-
-
-        {# gestion des commentaires #}
+        {# gestion des commentaires
         <hr>
         {% if app.user %}
             <div class="alert alert-light" id="comment">
                 {% set comment = recette.commentFromAuthor(app.user) %}
                 {% if comment is not null %}
-                    {# déjà commenté , on ne peut pas commenter 2 fois #}
+
                     <blockquote>
                         {{ comment.contenu }}
                     </blockquote>
@@ -124,6 +116,9 @@
         {% else %}
             <h2>Cette annonce n'a pas encore reçu de commentaire ...</h2>
         {% endif %}
+        #}
+
+        <post-comments data="{{ recette.id }}" data-user="{{ app.user ? app.user.id : 0 }}"></post-comments>
 
     </div>
 

@@ -2,17 +2,29 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\RecettesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=RecettesRepository::class)
  * @ORM\HasLifecycleCallbacks
+ * @ApiResource (
+ * collectionOperations={},
+ * itemOperations={
+ *     "get"={
+            "controller"=App\Controller\Api\EmptyController::class,
+ *     "read"=false,
+ *     "deserialize"=false
+ *     }
+ * }
+ * )
  * @UniqueEntity(
  *  fields={"titre"},
  *  message="titre déjà utilisé merci d'en choisir un autre"
@@ -31,6 +43,7 @@ class Recettes
     /**
      * @Assert\Length(min=2, max=40, minMessage="Le titre doit faire plus de 2 caractères", maxMessage="Le titre ne peut pas faire plus de 40 caractères")
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read:full:commentaire"})
      */
     private $titre;
 
