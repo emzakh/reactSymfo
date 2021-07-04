@@ -1,0 +1,39 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Administration des produits{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="mt-5">Gestion des produits</h1>
+        <a href={{ path('produit_create') }} class="btn btn btn-light fw-bold mb-5">Ajouter un produit</a>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th class="text-center">Actions</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for produit in pagination.data %}
+                <tr>
+                    <td>{{produit.id}}</td>
+                    <td>{{produit.nom}}</td>
+                    <td><img src="/uploads/{{ produit.image }}" style="object-fit: contain; max-height:50px;"> </td>
+                    <td class="text-center">
+                        <a href="{{path('admin_produits_edit', {'id':produit.id})}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('admin_produits_delete', {'id':produit.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {{ pagination.display() }}
+
+
+
+    </div>
+{% endblock %}

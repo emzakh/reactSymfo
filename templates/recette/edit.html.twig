@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une recette{% endblock %}
+
+
+{% block stylesheets %}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        input, textarea, select {
+            display:block;
+            width:100%;
+        }
+    </style>
+{% endblock %}
+{% form_theme myForm _self %}
+{% block body %}
+    {{ form_start(myForm) }}
+    <div class="container container2">
+        <h1>Modification de la recette</h1>
+
+
+        <div id="contactForm" class="mt-4"></div>
+        <div class="container-fluid">
+        <div class="col">{{ form_row(myForm.Titre) }}</div>
+        <div class="col descRecette">{{ form_row(myForm.description) }}</div>
+        <div class="col steps" id="autoHeight">{{ form_row(myForm.etapes)}}</div>
+        <div class="col">{{ form_row(myForm.ingredients) }}</div>
+        <div class="col">{{ form_row(myForm.types) }}</div>
+        <div class="col">{{ form_row(myForm.imgRecette) }}</div>
+
+        </div>
+
+
+        {{form_widget(myForm)}}
+        <button type="submit" class="btn btn-primary">Ajouter la recette</button>
+        {{ form_end(myForm) }}
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $('.custom-file input').change(function (e) {
+            var files = [];
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                files.push($(this)[0].files[i].name);
+            }
+            $(this).next('.custom-file-label').html(files.join(', '));
+        });
+
+
+        $(function(){
+            $('.select-tags').select2({
+                tags:true,
+                tokenSeparators : [',', ' ']
+            }).on('change', function (e){
+                //je recupere ce qui a été saisi (objet)
+                let label = $(this).find("[data-select2-tag=true]");
+
+                //permet de pas rajouter plusieurs fois le meme tag dans la BDD
+                //je verifie qu'il y a bien un element && si il existe deja dans la bdd
+                if(label.length && $.inArray(label.val(), $(this).val() !== -1)){
+                    $.ajax({
+                        url:"/recette/new/ajax"+label.val(),
+                        type: "POST"
+
+                    }).done(function(data){
+                        console.log(data)
+                    })
+                }
+            });
+
+            ;
+
+        })
+
+
+
+
+        $('textarea').on('input', function () {
+            this.style.height = "";
+            this.style.height = this.scrollHeight + "px";
+        });
+
+    </script>
+
+{% endblock %}
+

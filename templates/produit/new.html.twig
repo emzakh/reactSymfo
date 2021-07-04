@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'un produit{% endblock %}
+
+{% form_theme myForm _self %}
+
+{% block body %}
+    <div class="container container2">
+        <h1>Ajout d'un nouveau produit</h1>
+        {# {{ form(myForm) }} #}
+
+        {{ form_start(myForm) }}
+
+        {{form_widget(myForm)}}
+        <button type="submit" class="btn btn-primary">Ajouter le produit</button>
+        {{ form_end(myForm) }}
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        $('.custom-file input').change(function (e) {
+            var files = [];
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                files.push($(this)[0].files[i].name);
+            }
+            $(this).next('.custom-file-label').html(files.join(', '));
+        });
+
+    </script>
+{% endblock %}

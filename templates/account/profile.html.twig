@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profil utilisateur{% endblock %}
+
+{% block body %}
+
+
+        {{ form_start(myProfileForm) }}
+        <div class="container container2">
+            <h1 class="text-center display-4">Modification du profil</h1>
+            <div class="text-center">
+            <img src="/uploads/{{ app.user.picture }}" alt="avatar de {{app.user.fullName}}" class="mt-5 text-center" style="object-fit: contain; max-height: 300px;">
+            </div>
+            <a href="{{ path('account_modifimg') }}"> <h1 class="mb-5 text-center">Modification de l'avatar</h1></a>
+
+            <div id="contactForm" class="mt-4"></div>
+            <div class="container-fluid">
+                <div class="col">{{ form_row(myProfileForm.firstName) }}</div>
+                <div class="col">{{ form_row(myProfileForm.lastName) }}</div>
+                <div class="col">{{ form_row(myProfileForm.email) }}</div>
+                <div class="col">{{ form_row(myProfileForm.picture) }}</div>
+                <div class="col">{{ form_row(myProfileForm.presentation) }}</div>
+                {{form_widget(myProfileForm)}}
+                <div class="col">
+                <button type="submit" class="btn btn-primary">Modifier le profil</button>
+                </div>
+            </div>
+
+
+
+            {{ form_end(myProfileForm) }}
+
+        </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        $('.custom-file input').change(function (e) {
+            var files = [];
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                files.push($(this)[0].files[i].name);
+            }
+            $(this).next('.custom-file-label').html(files.join(', '));
+        });
+
+    </script>
+{% endblock %}

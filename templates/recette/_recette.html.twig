@@ -1,0 +1,29 @@
+{% set url = path('recette_show', {'slug': recette.slug}) %}
+
+<div class="gallery_product">
+
+        <div class="card m-3 cardProduit " style="width: 400px;">
+            <a href="{{ url }}">
+                <img class="card-img-top " src="/uploads/{{ recette.imgRecette }}" alt="Card image cap" style="height:300px; object-fit: cover;">
+            </a>
+
+            <div class="card-body">
+                <h2 class="p-2 text-center fw-bolder"> {{ recette.titre }}</h2>
+
+                {% if recette.commentaires | length > 0 %}
+                    {% include 'partials/rating.html.twig' with {'rating': recette.avgRatings } %} ({{ recette.comments | length }} avis)
+                {% else %}
+                    <small>Pas encore noté</small>
+                {% endif %}
+
+                <p class="mt-3"><a href="{{ url }}" class="btn btn-default filter-button">En savoir plus</a></p>
+
+            </div>
+        </div>
+
+</div>
+
+
+
+
+

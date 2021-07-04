@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container container2">
+            {% for produit in produits %}
+        <h1 class="my-3">Catégorie {{ produit.categorie }}</h1>
+        <div class="row">
+
+                {% set url = path('produit_show', {'slug': produit.slug}) %}
+
+                <div class="col">
+
+
+
+                    <div class="card bg-light">
+                        <h1>Nom du produit : </h1>   {{ produit.nom }}
+                    </div>
+
+                    <div class="card bg-light">
+                        <img src="{{ produit.image }}" alt="">
+                    </div>
+
+                    <div class="card bg-light">
+                        <h1>Nom latin : </h1>  {{ produit.nomlatin }}
+                    </div>
+                    <div class="card bg-light">
+                        <h1>Catégorie: </h1>  {{ produit.categorie }}
+                    </div>
+
+                    <div class="card bg-light">
+                        <h1>Effets : </h1>  {{ produit.effets }}
+                    </div>
+
+                    <div class="card bg-light">
+                        <h1>Description : </h1>  {{ produit.description }}
+                    </div>
+
+                    <a href="{{url}}" class="btn btn-secondary">En savoir plus</a>
+
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

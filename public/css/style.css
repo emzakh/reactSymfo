@@ -1,0 +1,279 @@
+body, html{
+    padding:0;
+    margin:0;
+    font-family: 'Raleway', sans-serif;
+
+}
+.container2{
+    min-height: 84vh;
+}
+
+footer{
+
+    bottom: 0;
+    width: 100%;
+
+}
+
+
+
+
+.hld{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+}
+
+nav{
+ font-size:20px;
+}
+
+
+.titleHomepage{
+    font-family: 'MedievalSharp', cursive;
+    font-size:70px;
+
+
+}
+
+
+.subtitleHomepage{
+    font-family: 'Raleway', sans-serif;
+    font-size:30px;
+
+}
+
+.txtfilter{
+    font-size:16px;
+}
+
+.more{
+    font-size:20px;
+}
+.txtPresentation{
+    font-size:20px;
+}
+.txtPresentation h2{
+    font-size:35px;
+}
+
+.produitTitle{
+    font-size:50px;
+    text-decoration: underline;
+}
+.produitSubtitle{
+    font-size:33px;
+}
+.produitTxt{
+font-size:22px;
+}
+.produitDescription{
+    font-size:20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+
+}
+
+
+.carousel-control-next-icon:after
+{
+    content: '>';
+    font-size: 55px;
+    color: #212529;
+}
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 55px;
+    color: #212529;
+}
+
+.carousel-indicators li {
+    background-color: #3b3636;
+}
+
+.starsimg{
+    height: 200px;
+    width: 100%;
+    display: block;
+}
+.txtCarousel{
+    color:#212529;
+    font-size:26px;
+
+}
+
+
+
+.txtCarousel:hover{
+    color:#212529;
+    text-decoration: none;
+}
+.annonce-title{
+
+    background-size: cover;
+    background-position: center center;
+}
+
+.annonce-title h1, .annonce-title p{
+    color: white;
+    text-shadow: 3px 3px 3px rgb(0,0,0,0.5);
+}
+
+.carousel-caption{
+    text-shadow: 3px 3px 3px rgb(0,0,0,0.5);
+}
+
+.avatar{
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 50%;
+}
+
+.avatar-medium{
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.avatar-mini{
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover{
+    color:  firebrick!important;
+}
+
+.rating i{
+    color: goldenrod;
+}
+
+#produitGallery {
+    padding: 40px;
+    margin: 0 auto;
+}
+.gallery-title
+{
+    font-size: 36px;
+    color: #db584e;
+    text-align: center;
+    font-weight: 700;
+    padding: 40px 20px 60px;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #db584e;
+    border-radius: 5px;
+    text-align: center;
+    color: #db584e;
+
+
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #db584e;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #db584e;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #db584e;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.cardProduit{
+    border: 1px #cbcbcb solid;
+}
+
+.steps textarea{
+    resize:none;
+    min-height:150px;
+    white-space: pre-wrap;
+
+
+}
+
+.descRecette textarea{
+    resize:none;
+    min-height:100px;
+    white-space: pre-wrap;
+}
+
+
+.recetteTxt{
+    font-size:20px;
+}
+
+.recetteSteps{
+    font-size:16px;
+}
+
+.recetteIndexMobile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recettesContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+
+@media screen and (max-width:1280px)
+{
+    .recetteIndexMobile{
+        flex-direction: column;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width: 991px)
+{
+    .columnResponsive{
+        flex-direction:column;
+        width:100%;
+        flex-wrap:wrap;
+    }
+
+}

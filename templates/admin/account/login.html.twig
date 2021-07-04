@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Hildegarde - connexion</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="col-md-4 offset-md-4 mt-5">
+    <div class="card bg-light mt-5">
+        <div class="card-header">
+            <h4 class="card-title">
+                <i class="fas fa-lock"></i> Connexion à l'administration
+            </h4>
+        </div>
+        <div class="card-body">
+            {% if hasError %}
+                <div class="alert alert-danger">Une erreur est survenue, le nom d'utilisateur ou le mot de passe est invalide</div>
+            {% endif %}
+            <form method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {# symfony veut un name précis pour le login : _username #}
+                    <input type="text" name="_username" id="email" class="form-control" placeholder="Adresse E-mail..." value="{{username}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    {# symfony veut un name précis pour le password: _password #}
+                    <input type="password" name="_password" id="password" class="form-control" placeholder="Votre mot de passe" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Connexion</button>
+                    <a href="{{path('homepage')}}" class="btn btn-link"><i class="fas fa-arrow-circle-left"></i> Retour au site</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+</html> 

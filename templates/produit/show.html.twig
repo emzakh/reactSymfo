@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit : {{ produit.nom }}{% endblock %}
+
+{% block body %}
+
+    <div class="container container2">
+
+        <div class="d-flex ">
+            <div class="w-50 mt-5">
+                {% if produit.image %}
+                    <img src="/uploads/{{ produit.image }}" style="width:100%; object-fit: contain; max-height:300px;"
+                         class="mt-5">
+                {% else %}
+                    <img src="http://placehold.it/300x300">
+                {% endif %}
+            </div>
+
+            <div class="w-50 d-flex justify-content-center  flex-column">
+
+                <h1 class="fw-bold produitTitle mb-5">{{ produit.nom }}</h1>
+
+                <div class="d-flex flex-column ">
+                    <h4 class="fw-bold produitSubtitle">Nom Latinus</h4>
+                    <p class="produitTxt">{{ produit.nomlatin }}</p>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <h4 class="fw-bold produitSubtitle">Catégorie</h4>
+                    <p class="produitTxt">{{ produit.categorie }}</p>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <h4 class="fw-bold produitSubtitle">Effets</h4>
+                    <p class="produitTxt">{{ produit.effets }}</p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="w-100">
+            <div class="text-center text-justify  mt-3">
+                <h2 class="fw-bold produitSubtitle">Description</h2>
+                <p class="produitDescription">{{ produit.description }}</p>
+            </div>
+            <hr style="width:100%" color="#cbcbcb">
+
+
+
+
+        </div>
+        {% if produit.getRecettesAssociees() | length > 0 %}
+        <h1 class="fw-bold text-center m-5 ">Recettes associées :</h1>
+
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for produit in produit.getRecettesAssociees() %}
+                    {% set url = path('recette_show', {'slug': produit.getSlug()}) %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}"
+                        {% if loop.index == 1 %}class="active sliderCarousel" {% endif %}></li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for produit in produit.getRecettesAssociees() %}
+                    <div class="carousel-item  {% if loop.index == 1 %}active{% endif %}">
+                        {% set url = path('recette_show', {'slug': produit.getSlug()}) %}
+                        <div class="text-center">
+                            <a href="{{ url }}" class=" text-center produitSubtitle"><h3>{{ produit.getTitre() }}</h3></a>
+                        </div>
+                        <a href="{{ url }}">
+                            <img class="img-fluid mb-5 " src="/uploads/{{ produit.getImgRecette() }}"
+                                 style="width:100%; object-fit: contain; max-height:300px;" alt="slide">
+                            <div class="text-center mx-5 mb-5 produitDescription">{{ produit.getDescription() }}</div>
+                        </a>
+
+
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if produit.getRecettesAssociees() | length > 1 %}
+
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            {% endif %}
+        </div>
+        {% else %}
+        <h2 class="text-center mt-5">Ce produit n'a pas encore de recette associée...</h2>
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}

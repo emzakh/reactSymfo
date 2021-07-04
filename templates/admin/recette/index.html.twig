@@ -1,0 +1,40 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Administration des recettes{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="my-5">Gestion des recettes</h1>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Date</th>
+                <th class="text-center">Note</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for recette in pagination.data %}
+                <tr>
+                    <td>{{recette.id}}</td>
+                    <td>{{recette.titre}}</td>
+                    <td>{{recette.author.fullName}}</td>
+                    <td>{{recette.date | date('d/m/Y H:i')}}</td>
+                    <td class="text-center">
+                        <span class="badge badge-primary rounded">{{recette.avgRatings }}</span>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{path('admin_recettes_edit', {'id':recette.id})}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('admin_recettes_delete', {'id':recette.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {{ pagination.display() }}
+    </div>
+{% endblock %}

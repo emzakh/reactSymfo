@@ -1,0 +1,123 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <div class="container-fluid ">
+        <div class="row my-5 columnResponsive">
+            <div class="col ">
+                <div class="cards bg-info text-white mb-3 text-center ">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-users fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <a href="{{path('admin_users_index')}}"><h4 class="card-title">{{stats.users}} utilisateurs</h4></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cards bg-dark text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-cookie-bite fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <a href="{{path('admin_recettes_index')}}"><h4 class="card-title">{{stats.recettes}} recettes postées</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cards bg-warning text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-carrot fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <a href="{{path('admin_produits_index')}}"><h4 class="card-title">{{stats.produits}} produits</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cards bg-success text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-comments fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <a href="{{path('admin_comments_index')}}"><h4 class="card-title">{{stats.commentaires}} commentaires</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row columnResponsive">
+            <div class="col">
+                <div class="alert alert-success">
+                    <h2 class="alert-heading my-3"><i class="fas fa-arrow-up"></i> Les recettes populaires</h2>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Recettes</th>
+                            <th>Auteur</th>
+                            <th class="text-center">Moyenne</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for recette in bestRecettes %}
+                            <tr>
+                                <td>{{recette.titre}}</td>
+                                <td>{{recette.firstName}} {{recette.lastName}}</td>
+                                <td class="text-center">
+                                    <span class="badge badge-dark">{{ recette.note | number_format(1,',',' ') }}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alert alert-danger">
+                    <h2 class="alert-heading my-3"><i class="fas fa-arrow-down"></i> Les pires recettes</h2>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Recette</th>
+                            <th>Auteur</th>
+                            <th class="text-center">Moyenne</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for recette in worstRecettes %}
+                            <tr>
+                                <td>{{recette.titre}}</td>
+                                <td>{{recette.firstName}} {{recette.lastName}}</td>
+                                <td class="text-center">
+                                    <span class="badge badge-dark">{{ recette.note | number_format(1,',',' ') }}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

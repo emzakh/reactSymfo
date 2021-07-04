@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du produit : {{produit.nom}}{% endblock %}
+
+{% form_theme myForm _self %}
+
+{% block body %}
+    {{ form_start(myForm) }}
+    <div class="container container2">
+        <h1>Modification du produit</h1>
+
+
+        <div id="contactForm" class="mt-4"></div>
+        <div class="container-fluid">
+            <div class="col">{{ form_row(myForm.nom) }}</div>
+            <div class="col">{{ form_row(myForm.nomlatin) }}</div>
+            <div class="col steps" id="autoHeight">{{ form_row(myForm.categorie) }}</div>
+            <div class="col">{{ form_row(myForm.effets) }}</div>
+            <div class="col descRecette">{{ form_row(myForm.description) }}</div>
+            <div class="col">{{ form_row(myForm.image) }}</div>
+            <div class="col">{{ form_row(myForm.recettesAssociees) }}</div>
+
+
+
+        </div>
+
+
+        {{form_widget(myForm)}}
+        <button type="submit" class="btn btn-primary">Modifier le produit</button>
+        {{ form_end(myForm) }}
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        $('.custom-file input').change(function (e) {
+            var files = [];
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                files.push($(this)[0].files[i].name);
+            }
+            $(this).next('.custom-file-label').html(files.join(', '));
+        });
+
+    </script>
+{% endblock %}
