@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5e40d4e-6093-4198-8f62-b309434e30cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/comments/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/CommentCreateController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/EmptyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/CommentVoter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hildegarde.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hildegarde.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/comments/Comment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Commentaires.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Commentaires.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Recettes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Recettes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/recette/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recette/show.html.twig" afterDir="false" />
     </list>
@@ -181,6 +173,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SymfonyReact\hildegardeReact\assets" />
       <recent name="D:\SymfonyReact\hildegardeReact\assets\js" />
       <recent name="D:\symfony\hildegarde\templates\search" />
       <recent name="D:\symfony\hildegarde\templates\admin\account" />
@@ -232,7 +225,8 @@
       <workItem from="1625400241685" duration="251000" />
       <workItem from="1625400537118" duration="981000" />
       <workItem from="1625401615854" duration="1625000" />
-      <workItem from="1625409046170" duration="9076000" />
+      <workItem from="1625409046170" duration="13353000" />
+      <workItem from="1625480281778" duration="541000" />
     </task>
     <servers />
   </component>

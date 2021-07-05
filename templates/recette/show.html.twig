@@ -64,9 +64,10 @@
     </div>
 
     <div class="col">
-        {% set a = recette.author %}
+
         {# exemple : ad.author.fullName devient a.fullName #}
         {# gestion des commentaires
+        {% set a = recette.author %}
         <hr>
         {% if app.user %}
             <div class="alert alert-light" id="comment">
@@ -118,7 +119,7 @@
         {% endif %}
         #}
 
-        <post-comments data="{{ recette.id }}" data-user="{{ app.user ? app.user.id : 0 }}"></post-comments>
+        <post-comments></post-comments>
 
     </div>
 
