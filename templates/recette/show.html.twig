@@ -119,7 +119,7 @@
         {% endif %}
         #}
 
-        <post-comments></post-comments>
+        <post-comments data-post="{{ recette.id }}" data-user="{{ app.user ? app.user.id : 0 }}"></post-comments>
 
     </div>
 

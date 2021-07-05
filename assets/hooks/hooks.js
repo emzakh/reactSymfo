@@ -3,8 +3,6 @@ import {useState, useCallback} from 'react'
 export function usePaginatedFetch (url) {
     const [loading, setLoading] = useState(false)
     const [items, setItems] = useState([])
-    const[count, useState] = useState(0)
-
     const load = useCallback(async () => {
         setLoading(true)
         const response = await fetch(url, {
@@ -15,7 +13,6 @@ export function usePaginatedFetch (url) {
         const responseData = await response.json()
         if(response.ok){
             setItems(responseData['hydra:member'])
-            setCount(responseData['hydra:totalItems'])
         } else {
             console.error(responseData)
         }
