@@ -11,4 +11,4 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
-import './comments/Comment.js';
+import './comments/Comment.jsx';
