@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5e40d4e-6093-4198-8f62-b309434e30cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/components/Form.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/Icon.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/comments/Comment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/comments/Comment.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/hooks/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hooks/hooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recette/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recette/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +172,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -230,6 +231,9 @@
       <workItem from="1625401615854" duration="1625000" />
       <workItem from="1625409046170" duration="13353000" />
       <workItem from="1625480281778" duration="6099000" />
+      <workItem from="1625654072270" duration="213000" />
+      <workItem from="1625654329641" duration="57000" />
+      <workItem from="1625654399065" duration="12589000" />
     </task>
     <servers />
   </component>
@@ -257,9 +261,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1625417419858" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1625497642423">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1625654452801">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1625497642423" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1625654452801" />
   </component>
 </project>
