@@ -22,9 +22,6 @@
     <list default="true" id="a5e40d4e-6093-4198-8f62-b309434e30cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/comments/Comment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/comments/Comment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/Form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/hooks/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hooks/hooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +231,8 @@
       <workItem from="1625654072270" duration="213000" />
       <workItem from="1625654329641" duration="57000" />
       <workItem from="1625654399065" duration="13211000" />
-      <workItem from="1625920104401" duration="12258000" />
+      <workItem from="1625920104401" duration="12915000" />
+      <workItem from="1626176562462" duration="3575000" />
     </task>
     <servers />
   </component>

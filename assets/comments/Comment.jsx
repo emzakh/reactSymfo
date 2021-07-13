@@ -38,7 +38,7 @@ function Comments ({post, user}) {
             <Comment
                 key={c.id}
                 comment={c}
-                canEdit={c.author.id === user }
+                canEdit={c.author.id === user || user.role === "ROLE_ADMIN"}
                 onDelete={deleteComment}
                 onUpdate={updateComment}
             />
