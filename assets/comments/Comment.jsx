@@ -12,6 +12,7 @@ const dateFormat = {
 const VIEW = 'VIEW'
 const EDIT = 'EDIT'
 
+
 function Comments ({post, user}) {
     const {items: comments, setItems:setComments, load, loading, count, hasMore} = usePaginatedFetch('/api/commentaires?recette=' +post)
 
@@ -34,18 +35,26 @@ function Comments ({post, user}) {
     return <div>
         <Title count={count} />
         {user && <CommentForm post={post} onComment={addComment}/>}
+
         {comments.map(c =>
             <Comment
                 key={c.id}
                 comment={c}
-                canEdit={c.author.id === user || user.role === "ROLE_ADMIN"}
+                canEdit={c.author.id === user}
                 onDelete={deleteComment}
                 onUpdate={updateComment}
             />
+
+
         )}
         {hasMore && <button disabled={loading} className="btn btn-primary" onClick={load}> Charger plus de commentaires</button>}
+
     </div>
+
+
 }
+
+
 
 const Comment = React.memo(({comment, onDelete, canEdit, onUpdate}) => {
     const date = new Date(comment.createdAt)
