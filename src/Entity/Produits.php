@@ -2,17 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Cocur\Slugify\Slugify;
 use App\Repository\ProduitsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProduitsRepository::class)
  * @ORM\HasLifecycleCallbacks
+ * @ApiResource(
+ *     normalizationContext={
+ *          "groups"={"produits_read"}
+ *     }
+ * )
  * @UniqueEntity(
  *  fields={"nom"},
  *  message="Un autre produit possède déjà ce nom, merci de le modifier"
@@ -25,11 +32,13 @@ class Produits
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"produits_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"produits_read"})
      */
     private $categorie;
 
@@ -37,40 +46,47 @@ class Produits
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Image(mimeTypes={"image/png", "image/jpeg", "image/jpg", "image/gif"}, mimeTypesMessage="Vous devez upload un fichier jpg, png ou gif")
      * @Assert\File(maxSize="1024k", maxSizeMessage="Taille du fichier trop grande")
+     * @Groups({"produits_read"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min=2, max=50, minMessage="Le nom du produit doit faire plus de 2 caractères", maxMessage="Le nom ne peut pas faire plus de 50 caractères")
+     * @Groups({"produits_read"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(min=2, max=50, minMessage="Le nom latin du produit doit faire plus de 2 caractères", maxMessage="Le nom ne peut pas faire plus de 50 caractères")
+     * @Groups({"produits_read"})
      */
     private $nomlatin;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min=2, minMessage="Les effets doivent faire plus de 2 caractères")
+     * @Groups({"produits_read"})
      */
     private $effets;
 
     /**
      * @ORM\Column(type="text")
      * @Assert\Length(min=20, minMessage="Votre description doit faire plus de 10 caractères")
+     * @Groups({"produits_read"})
      */
     private $description;
 
     /**
      * @ORM\ManyToMany(targetEntity=Recettes::class, inversedBy="ingredients")
+     * @Groups({"produits_read"})
      */
     private $recettesAssociees;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $slug;
 

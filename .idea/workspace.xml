@@ -20,8 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5e40d4e-6093-4198-8f62-b309434e30cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/components/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/pages/HomePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/pages/ProduitsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Events/PasswordEncoderSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Doctrine/CurrentUserExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doctrine/CurrentUserExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProduitController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produits.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,13 +187,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SymfonyReact\hildegardeReact\assets" />
       <recent name="D:\SymfonyReact\hildegardeReact\assets\js" />
+      <recent name="D:\SymfonyReact\hildegardeReact\assets" />
       <recent name="D:\symfony\hildegarde\templates\search" />
       <recent name="D:\symfony\hildegarde\templates\admin\account" />
       <recent name="D:\symfony\hildegarde\templates\admin" />
@@ -266,9 +278,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1625417419858" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1625654452801">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1459" y="165" key="SettingsEditor" timestamp="1626283641741">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1459" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1626283641741" />
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1625654452801" />
   </component>
 </project>
