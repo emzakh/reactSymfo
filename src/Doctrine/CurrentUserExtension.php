@@ -26,7 +26,6 @@ class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryIt
     private function addWhere(QueryBuilder $queryBuilder, string $resourceClass){
         // obtenir l'utilisateur connecté
         $user = $this->security->getUser();
-        // si on demande des invoices ou des customers, alors agir sur la requête pour qu'elle tienne compte de l'utilisateur connecté
         if(($resourceClass === Commentaires::class || $resourceClass === Recettes::class) && !$this->auth->isGranted('ROLE_ADMIN') && $user instanceof User){
             $rootAlias = $queryBuilder->getRootAliases()[0]; // permet de récupèrer l'alias de la queryBuilder. Attention, ici on récupère un tableau et on veut le 1er
 
