@@ -119,7 +119,8 @@
         {% endif %}
         #}
 
-        <post-comments data-post="{{ recette.id }}" data-user="{{ app.user ? app.user.id : 0 }}"></post-comments>
+        <post-comments data-post="{{ recette.id }}" data-user="{{ app.user ? app.user.id  : 0 }}" data-role="{{ app.user ? app.user.roles|json_encode }}"></post-comments>
+
 
     </div>
 

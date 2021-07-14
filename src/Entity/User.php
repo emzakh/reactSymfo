@@ -18,7 +18,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- *
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity(
  *  fields={"email"},
@@ -44,6 +43,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="json")
+     * @Groups({"read:commentaire"})
      */
     private $roles = [];
 

@@ -13,7 +13,7 @@ const VIEW = 'VIEW'
 const EDIT = 'EDIT'
 
 
-function Comments ({post, user}) {
+function Comments ({post, user, role}) {
     const {items: comments, setItems:setComments, load, loading, count, hasMore} = usePaginatedFetch('/api/commentaires?recette=' +post)
 
     const addComment = useCallback(comment => {
@@ -40,7 +40,7 @@ function Comments ({post, user}) {
             <Comment
                 key={c.id}
                 comment={c}
-                canEdit={c.author.id === user}
+                canEdit={c.author.id === user || role.includes("ROLE_ADMIN")}
                 onDelete={deleteComment}
                 onUpdate={updateComment}
             />
@@ -170,24 +170,22 @@ function Title ({count}) {
 
 
 class CommentsElement extends HTMLElement {
-
-
     constructor (){
         super()
         this.observer = null
     }
 
-
-
     connectedCallback () {
         const post = parseInt(this.dataset.post, 10)
         const user = parseInt(this.dataset.user, 10) || null //si valeur user pas définie on renvoi null pour pas afficher 0
+        const role = this.dataset.role
+
         if(this.observer===null){
             this.observer = new IntersectionObserver((entries, observer) =>{
                 entries.forEach(entry => {
                     if (entry.isIntersecting && entry.target === this){
                      observer.disconnect()
-                     render (<Comments post={post} user={user}/>, this)
+                     render (<Comments post={post} user={user} role={role}/>, this)
                     }
                 })
             })

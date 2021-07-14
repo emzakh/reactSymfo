@@ -23,7 +23,7 @@ use App\Controller\Api\CommentCreateController;
  *     collectionOperations={
  *     "get",
  *     "post"={
- *      "security"="is_granted('IS_AUTHENTICATED_FULLY')",
+ *      "security"="is_granted('IS_AUTHENTICATED_FULLY', 'ROLE_ADMIN')",
  *      "controller"=App\Controller\Api\CommentCreateController::class,
  *      "denormalization_context"={"groups"={"create:commentaire"}}
  *     }

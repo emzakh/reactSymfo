@@ -6,14 +6,12 @@ use App\Entity\Commentaires;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
-use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
+
 
 class CommentVoter extends Voter
 {
 
     const EDIT='EDIT_COMMENT';
-
-
 
     protected function supports(string $attribute, $subject)
     {
@@ -25,9 +23,10 @@ class CommentVoter extends Voter
     protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token)
     {
         $user = $token->getUser();
-        if(!$user instanceof User || !$subject instanceof Commentaires){
-            return false;
+        if($user instanceof User || $subject instanceof Commentaires){
+            return $subject->getAuthor()->getId() === $user->getId();
         }
-        return $subject->getAuthor()->getId() === $user->getId();
+        return false;
+
     }
 }
